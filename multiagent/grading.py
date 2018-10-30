@@ -74,7 +74,7 @@ class Grades:
       try:
         util.TimeoutFunction(getattr(gradingModule, q),300)(self) # Call the question's function
         #TimeoutFunction(getattr(gradingModule, q),1200)(self) # Call the question's function
-      except Exception, inst:
+      except Exception as inst:
         self.addExceptionMessage(q, inst, traceback)
         self.addErrorHints(exceptionMap, inst, q[1])
       except:

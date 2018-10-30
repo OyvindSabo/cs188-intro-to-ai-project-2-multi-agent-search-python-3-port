@@ -115,7 +115,7 @@ def parseTreeProblem(testDict):
             state, value = tokens
             evaluation[state] = float(value)
         else:
-            raise Exception, "[parseTree] Bad evaluation line: |%s|" % (line,)
+            raise Exception("[parseTree] Bad evaluation line: |%s|" % (line,))
 
     for line in testDict["successors"].split('\n'):
         tokens = line.split()
@@ -123,7 +123,7 @@ def parseTreeProblem(testDict):
             state, action, nextState = tokens
             successors.append((state, action, nextState))
         else:
-            raise Exception, "[parseTree] Bad successor line: |%s|" % (line,)
+            raise Exception("[parseTree] Bad successor line: |%s|" % (line,))
 
     return MultiagentTreeProblem(numAgents, startState, winStates, loseStates, successors, evaluation)
 
