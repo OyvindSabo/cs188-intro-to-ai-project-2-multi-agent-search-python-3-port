@@ -153,9 +153,9 @@ class GradingAgent(Agent):
         self.suboptimalMoves = []
         self.wrongStatesExplored = -1
         # boolean vectors represent types of implementation the student could have
-        self.actionsConsistentWithOptimal = [True for i in range(len(optimalActions[0]))]
-        self.actionsConsistentWithAlternativeDepth = [True for i in range(len(altDepthActions[0]))]
-        self.actionsConsistentWithPartialPlyBug = [True for i in range(len(partialPlyBugActions[0]))]
+        self.actionsConsistentWithOptimal = [True for i in list(range(len([list(optimalActions)[0]])))]
+        self.actionsConsistentWithAlternativeDepth = [True for i in list(range(len([list(altDepthActions)[0]])))]
+        self.actionsConsistentWithPartialPlyBug = [True for i in list(range(len([list(partialPlyBugActions)[0]])))]
         # keep track of elapsed moves
         self.stepCount = 0
         self.seed = seed
